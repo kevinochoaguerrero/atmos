@@ -9,6 +9,8 @@ import { Combobox } from "./ui/combobox"; // Asegúrate de tener este componente
 import { Button } from "@/components/ui/button"; // Asegúrate de tener este componente
 import { Chart } from "./ui/chart"; // Asegúrate de tener este componente
 import { dataList } from "@/air-data"; // Asegúrate de tener este archivo JSON
+import Link from "next/link";
+
 
 // Define the City interface
 interface City {
@@ -182,10 +184,12 @@ const Map: React.FC = () => {
             Emission Density
           </span>
         </div>
+        <Link href="/" passHref>
+          <div className="absolute top-2 left-2 text-white p-2 text-lg font-bold">
+            México
+          </div>
+        </Link>
 
-        <div className="absolute top-2 left-2 text-white p-2 text-lg font-bold">
-          México
-        </div>
         <div className="absolute right-1 top-2">
           <Combobox onCitySelect={handleZoomToCity} cities={cities} />
         </div>
@@ -211,7 +215,9 @@ const Map: React.FC = () => {
         <div>
           <div className="absolute bottom-[250px] md:bottom-[268px] left-1/2 z-10 bg-black/50 backdrop-blur-md text-white p-4 rounded shadow-lg md:w-[30%] w-[90%] transform -translate-x-1/2">
             <div className="flex flex-col">
-              <h3 className="font-bold text-md">{activeCity.alternativeName}</h3>
+              <h3 className="font-bold text-md">
+                {activeCity.alternativeName}
+              </h3>
               <p className="text-sm">{activeCity.description}</p>
               <div className="flex justify-end">
                 <a
@@ -227,7 +233,9 @@ const Map: React.FC = () => {
             </div>
           </div>
           <div className="absolute md:bottom-[72px] bottom-[105px] left-1/2 z-10 bg-black/50 backdrop-blur-md text-white p-4 rounded shadow-lg md:w-[30%] w-[90%] transform -translate-x-1/2">
-            <span className="font-bold">Emissions Overview:(Work in progress)</span>
+            <span className="font-bold">
+              Monthly average: (Work in progress)
+            </span>
             <Chart data={dataList[activeDataIndex]} />
           </div>
         </div>
