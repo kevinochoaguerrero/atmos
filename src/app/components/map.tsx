@@ -227,7 +227,7 @@ const Map: React.FC = () => {
             </div>
           </div>
           <div className="absolute md:bottom-[72px] bottom-[105px] left-1/2 z-10 bg-black/50 backdrop-blur-md text-white p-4 rounded shadow-lg md:w-[30%] w-[90%] transform -translate-x-1/2">
-            <span className="font-bold">Emissions Overview:</span>
+            <span className="font-bold">Emissions Overview:(Work in progress)</span>
             <Chart data={dataList[activeDataIndex]} />
           </div>
         </div>

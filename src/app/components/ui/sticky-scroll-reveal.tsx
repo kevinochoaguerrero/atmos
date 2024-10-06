@@ -88,8 +88,8 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
             <div>{content[safeActiveCard].content ?? null}</div>
             <div className="flex justify-center">
               <Link href="/map" passHref>
-                <Button className="w-fit border border-[#0052B0]">
-                  Go to the source
+                <Button className="w-fit  border-2 border-[#0052B0]">
+                  Go to the map
                 </Button>
               </Link>
             </div>

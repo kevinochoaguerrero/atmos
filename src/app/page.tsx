@@ -6,6 +6,8 @@ import enContent from "../locales/en.json";
 import esContent from "../locales/es.json";
 import { Logo } from "./components/logo";
 import Lottie from "lottie-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface BaseContentItem {
   title: string;
@@ -84,21 +86,24 @@ export default function Home() {
   return (
     <div className="bg-[#11131D] h-screen flex flex-col items-center">
       <main className="flex flex-col items-center">
-        <div className="container flex flex-row items-center justify-between px-12 p-1 mt-28 mb-14">
-          <div className="text-white text-[17px] flex gap-8 mb-4">
-            <span>Home</span>
-            <span>About us</span>
-          </div>
+        <div className="container flex flex-row items-center justify-between px-12 p-1 mt-12 md:mt-28 mb-14">
           <button
             onClick={switchLanguage}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 hidden bg-blue-500 text-white rounded"
           >
             {language === "en" ? "Switch to Spanish" : "Cambiar a Inglés"}
           </button>
         </div>
 
-        <div className="flex justify-center items-center mb-4">
+        <div className="flex flex-col gap-4 justify-center items-center mb-10">
           <Logo className="fill-white w-[300px] h-fit" />
+          <div className="flex justify-center md:hidden ">
+            <Link href="/map" passHref>
+              <Button className="text-2xl border-2 mt-6 border-[#0052B0]">
+                Go to the map
+              </Button>
+            </Link>
+          </div>
         </div>
         <StickyScroll content={content} />
       </main>
