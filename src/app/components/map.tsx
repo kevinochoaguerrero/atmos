@@ -186,7 +186,7 @@ const Map: React.FC = () => {
         </div>
         <Link href="/" passHref>
           <div className="absolute top-2 left-2 text-white p-2 text-lg font-bold">
-            México
+            México (N02 gas vision)
           </div>
         </Link>
 
