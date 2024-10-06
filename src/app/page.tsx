@@ -1,61 +1,62 @@
-import React from "react";
-import Image from "next/image";
-import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
+"use client"; 
 
-const content = [
-  {
-    title: "Collaborative Editing",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+import React, { useEffect, useState } from "react";
+import { StickyScroll } from "./components/ui/sticky-scroll-reveal";
+import enContent from "../locales/en.json"; 
+import esContent from "../locales/es.json";
+import Image from "next/image";
+
+interface ContentItem {
+  title: string;
+  description: string;
+  content?: React.ReactNode;
+}
+
+interface LocaleContent {
+  content: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
+}
+const createContent = (data: LocaleContent["content"]): ContentItem[] => {
+  return data.map((item) => ({
+    title: item.title,
+    description: item.description,
     content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Collaborative Editing
-      </div>
-    ),
-  },
-  {
-    title: "Real time changes",
-    description:
-      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
+      <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="/linear.webp"
+          src={item.image}
           width={300}
           height={300}
           className="h-full w-full object-cover"
-          alt="linear board demo"
+          alt={item.title}
         />
       </div>
     ),
-  },
-  {
-    title: "Version control",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
-        Version control
-      </div>
-    ),
-  },
-  {
-    title: "Running out of content",
-    description:
-      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        Running out of content
-      </div>
-    ),
-  },
-];
+  }));
+};
 
 export default function Home() {
+  const [language, setLanguage] = useState<"en" | "es">("en");
+  const [content, setContent] = useState<ContentItem[]>(createContent(enContent.content));
+
+  useEffect(() => {
+    const currentContent = language === "en" ? enContent.content : esContent.content;
+    setContent(createContent(currentContent));
+  }, [language]);
+
+  const switchLanguage = () => {
+    setLanguage((prevLang) => (prevLang === "en" ? "es" : "en"));
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <button onClick={switchLanguage} className="mb-4 px-4 py-2 bg-blue-500 text-white rounded">
+        {language === "en" ? "Switch to Spanish" : "Cambiar a Inglés"}
+      </button>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <StickyScroll content={content} />
+        <StickyScroll content={content} />
       </main>
     </div>
   );

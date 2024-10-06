@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilo del scrollbar para todos los navegadores */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #0000ff; /* Color de fondo del track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff22ff; /* Color del thumb */
+  border-radius: 10px; /* Bordes redondeados del thumb */
+}
 
 :root {
   --background: #ffffff;
@@ -17,25 +33,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Estilo del scrollbar para todos los navegadores */
-::-webkit-scrollbar {
-  width: 12px; /* Ancho del scrollbar */
-}
-
-::-webkit-scrollbar-track {
-  background: #0000ff; /* Color de fondo del track */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ff22ff; /* Color del thumb */
-  border-radius: 10px; /* Bordes redondeados del thumb */
-}
-
-/* Para Firefox */
-body {
+  font-family: 'DM Sans', sans-serif; /* Aplicar la fuente DM Sans */
   scrollbar-width: thin; /* Ancho del scrollbar */
   scrollbar-color: #00ff00 #ff0000; /* Color del thumb y del track */
 }

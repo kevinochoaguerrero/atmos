@@ -1,0 +1,24 @@
+{
+    "content": [
+      {
+        "title": "Edición Colaborativa",
+        "description": "Trabaja junto a tu equipo, clientes y partes interesadas en tiempo real. Colabora en documentos, comparte ideas y toma decisiones rápidamente. Con nuestra plataforma, puedes optimizar tu flujo de trabajo y aumentar la productividad.",
+        "image": "/image-1.webp"
+      },
+      {
+        "title": "Cambios en tiempo real",
+        "description": "Ve los cambios a medida que ocurren. Con nuestra plataforma, puedes rastrear cada modificación en tiempo real. No más confusiones sobre la última versión de tu proyecto. Di adiós al caos del control de versiones y abraza la simplicidad de las actualizaciones en tiempo real.",
+        "image": "/image-2.webp"
+      },
+      {
+        "title": "¡HOLA VEROOOO!",
+        "description": "Experimenta actualizaciones en tiempo real y nunca te preocupes por el control de versiones nuevamente. Nuestra plataforma asegura que siempre trabajes en la versión más reciente de tu proyecto, eliminando la necesidad de actualizaciones manuales constantes. Mantente informado, alinea a tu equipo y mantén el flujo de tu trabajo sin interrupciones.",
+        "image": "/image-3.webp"
+      },
+      {
+        "title": "¿Quedándote sin contenido?",
+        "description": "Experimenta actualizaciones en tiempo real y nunca te preocupes por el control de versiones nuevamente. Nuestra plataforma asegura que siempre trabajes en la versión más reciente de tu proyecto, eliminando la necesidad de actualizaciones manuales constantes. Mantente informado, alinea a tu equipo y mantén el flujo de tu trabajo sin interrupciones.",
+        "image": "/image-4.webp"
+      }
+    ]
+  }
