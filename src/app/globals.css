@@ -14,7 +14,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 34, 255, 0.7); /* Color del thumb con opacidad */
+  background-color: rgba(17, 19, 29, 0) transparent; /* Color 
   border-radius: 10px; /* Bordes redondeados del thumb */
 }
 
