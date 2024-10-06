@@ -20,6 +20,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Estilo del scrollbar para todos los navegadores */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #0000ff; /* Color de fondo del track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff22ff; /* Color del thumb */
+  border-radius: 10px; /* Bordes redondeados del thumb */
+}
+
+/* Para Firefox */
+body {
+  scrollbar-width: thin; /* Ancho del scrollbar */
+  scrollbar-color: #00ff00 #ff0000; /* Color del thumb y del track */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
