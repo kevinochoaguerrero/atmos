@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,20 +10,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0000ff; /* Color de fondo del track */
+  background: transparent; /* Color de fondo del track (transparente) */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff22ff; /* Color del thumb */
+  background-color: rgba(255, 34, 255, 0.7); /* Color del thumb con opacidad */
   border-radius: 10px; /* Bordes redondeados del thumb */
 }
 
 body {
-  font-family: 'DM Sans', sans-serif; /* Aplicar la fuente DM Sans */
+  font-family: "DM Sans", sans-serif; /* Aplicar la fuente DM Sans */
   scrollbar-width: thin; /* Ancho del scrollbar */
-  scrollbar-color: #00ff00 #ff0000; /* Color del thumb y del track */
+  background-color: #11131d; /* Color de fondo oscuro */
+  scrollbar-color: rgba(17, 19, 29, 0) transparent; /* Color del thumb y del track (transparente) */
 }
-
 
 @layer utilities {
   .text-balance {

@@ -3,22 +3,27 @@
     {
       "title": "Surely, you’ve heard about CO, NO2, O3, and CH4 ",
       "description": "Gases that play vital roles in regulating our planet's temperature, by trapping some of the sun's heat and creating the warmth necessary for life on Earth",
-      "image": "/image-1.webp"
+      "lottie": "first.json"
     },
     {
-      "title": "Real time changes",
+      "title": "Without them, life as we know it wouldn’t exist!",
       "description": "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-      "image": "/image-2.webp"
+      "lottie": "second.json"
     },
     {
-      "title": "HELLO VEROOOO",
+      "title": "But what happens when there’s too much of these gases?",
       "description": "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      "image": "/image-3.webp"
+      "lottie": "second.json"
     },
     {
-      "title": "Running out of content",
+      "title": "RBy tracking CO, NO2, O3 amd CH4 levels, we can identify problems at take action",
       "description": "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      "image": "/image-4.webp"
+      "lottie": "second.json"
+    },
+    {
+      "title": "ATMOS puts this information at your fingertips!",
+      "description": "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      "lottie": "second.json"
     }
   ]
 }

@@ -1,8 +1,11 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface ContentItem {
   title: string;
@@ -42,49 +45,29 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
-  ];
-  const linearGradients = [
-    "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
-    "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
-    "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
-  ];
-
-  const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
-  );
-
-  useEffect(() => {
-    setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCard]);
+  // Ensure activeCard is within bounds
+  const safeActiveCard = Math.min(activeCard, cardLength - 1);
 
   return (
     <motion.div
-      animate={{
-        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-4 gap-20 rounded-md p-10"
       ref={ref}
     >
-      <div className="relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div className="relative mt-10 flex items-start px-2">
+        <div className="max-w-md">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
                 initial={{ opacity: 0 }}
-                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="text-2xl font-bold text-slate-100"
+                animate={{ opacity: safeActiveCard === index ? 1 : 0.3 }}
+                className="text-[28px] font-bold text-white"
               >
                 {item.title}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0 }}
-                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                animate={{ opacity: safeActiveCard === index ? 1 : 0.3 }}
+                className="text-[17px] text-white max-w-md mt-4 leading-[22px] tracking-wide"
               >
                 {item.description}
               </motion.p>
@@ -94,13 +77,24 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
         </div>
       </div>
       <div
-        style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:flex flex-col gap-8 h-fit w-80 rounded-md sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+        {/* Check if content exists before accessing */}
+        {content.length > 0 && (
+          <>
+            <div>{content[safeActiveCard].content ?? null}</div>
+            <div className="flex justify-center">
+              <Link href="/map" passHref>
+                <Button className="w-fit border border-[#0052B0]">
+                  Go to the source
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </motion.div>
   );

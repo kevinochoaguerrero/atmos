@@ -10,18 +10,18 @@ import {
 } from "@/components/ui/chart";
 
 const chartData = [
-  { month: "1", value: 186 },
-  { month: "2", value: 305 },
-  { month: "3", value: 237 },
-  { month: "4", value: 73 },
-  { month: "5", value: 24 },
-  { month: "6", value: 33 },
-  { month: "7", value: 34 },
-  { month: "8", value: 253 },
-  { month: "9", value: 234 },
-  { month: "10", value: 223 },
-  { month: "11", value: 23 },
-  { month: "12", value: 42 },
+  { month: "1", value: 5.42 },
+  { month: "2", value: 5.43 },
+  { month: "3", value: 5.44 },
+  { month: "4", value: 5.43 },
+  { month: "5", value: 5.42 },
+  { month: "6", value: 5.45 },
+  { month: "7", value: 5.46 },
+  { month: "8", value: 5.47 },
+  { month: "9", value: 5.48 },
+  { month: "10", value: 5.45 },
+  { month: "11", value: 5.43 },
+  { month: "12", value: 5.44 },
 ];
 
 const chartConfig = {
