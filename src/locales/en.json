@@ -13,17 +13,17 @@
     {
       "title": "But what happens when there’s too much of these gases?",
       "description": "Weather patterns are disrupt, ecosystems are harmed, and air quality declines causing people to get sick",
-      "lottie": "second.json"
+      "lottie": "third.json"
     },
     {
       "title": "By tracking CO, NO2, O3 amd CH4 levels, we can identify problems at take action",
       "description": "Insights are in the air, decisions in our hands",
-      "lottie": "second.json"
+      "lottie": "fourth.json"
     },
     {
       "title": "ATMOS puts this information at your fingertips!",
       "description": "Find correlations, spot trends, and make informed decisions",
-      "lottie": "second.json"
+      "lottie": "fourth.json"
     }
   ]
 }

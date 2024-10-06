@@ -53,10 +53,10 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
       className="h-[30rem] overflow-y-auto flex justify-center relative space-x-4 gap-20 rounded-md p-10"
       ref={ref}
     >
-      <div className="relative mt-10 flex items-start px-2">
+      <div className="relative mt-0 md:mt-10 flex items-start px-2">
         <div className="max-w-md">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-4 md:my-20">
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: safeActiveCard === index ? 1 : 0.3 }}
